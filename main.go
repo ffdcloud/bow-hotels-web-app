@@ -12,7 +12,7 @@ import (
 const (
 	dbUser     = "admin"
 	dbPassword = "Password1234"
-	dbHost     = "bow-hotels-rds.c1a0iooss11x.us-east-1.rds.amazonaws.com"
+	dbHost     = "bow-hotels-rds.czptxhzjxjrt.us-east-1.rds.amazonaws.com"
 	dbPort     = "3306"
 	dbName     = "bowhotels"
 )
