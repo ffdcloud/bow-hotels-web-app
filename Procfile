@@ -1,0 +1,1 @@
+web: ./.platform/hooks/build/build.sh
