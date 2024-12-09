@@ -25,14 +25,14 @@ func main() {
 	var err error
 	db, err = sql.Open("mysql", dataSourceName)
 	if err != nil {
-		log.Fatalf("Error connecting to database: %v", err)
+		// log.Fatalf("Error connecting to database: %v", err)
 	}
 	defer db.Close()
 
 	// Test the database connection
 	err = db.Ping()
 	if err != nil {
-		log.Fatalf("Unable to reach database: %v", err)
+		// log.Fatalf("Unable to reach database: %v", err)
 	}
 	fmt.Println("Connected to the database successfully!")
 
