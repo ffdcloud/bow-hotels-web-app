@@ -44,7 +44,7 @@ func main() {
 
 	// Start server on port 80
 	log.Println("Starting server on port 80...")
-	if err := http.ListenAndServe(":80", nil); err != nil {
+	if err := http.ListenAndServe(":8080", nil); err != nil {
 		log.Fatal("Server failed to start: ", err)
 	}
 }
