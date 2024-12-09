@@ -2,9 +2,9 @@ package main
 
 import (
 	"database/sql"
-	"fmt"
 	"log"
 	"net/http"
+	"os"
 
 	_ "github.com/go-sql-driver/mysql"
 )
@@ -20,21 +20,27 @@ const (
 var db *sql.DB
 
 func main() {
-	// Initialize database connection
-	dataSourceName := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s", dbUser, dbPassword, dbHost, dbPort, dbName)
-	var err error
-	db, err = sql.Open("mysql", dataSourceName)
-	if err != nil {
-		// log.Fatalf("Error connecting to database: %v", err)
+	// Get the port from the environment (default to 8080)
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
 	}
-	defer db.Close()
 
-	// Test the database connection
-	err = db.Ping()
-	if err != nil {
-		// log.Fatalf("Unable to reach database: %v", err)
-	}
-	fmt.Println("Connected to the database successfully!")
+	// Initialize database connection
+	// dataSourceName := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s", dbUser, dbPassword, dbHost, dbPort, dbName)
+	// var err error
+	// db, err = sql.Open("mysql", dataSourceName)
+	// if err != nil {
+	// 	// log.Fatalf("Error connecting to database: %v", err)
+	// }
+	// defer db.Close()
+
+	// // Test the database connection
+	// err = db.Ping()
+	// if err != nil {
+	// 	// log.Fatalf("Unable to reach database: %v", err)
+	// }
+	// fmt.Println("Connected to the database successfully!")
 
 	// Handle form submission
 	http.HandleFunc("/submit", submitHandler)
@@ -44,7 +50,7 @@ func main() {
 
 	// Start server on port 80
 	log.Println("Starting server on port 80...")
-	if err := http.ListenAndServe(":8080", nil); err != nil {
+	if err := http.ListenAndServe(":"+port, nil); err != nil {
 		log.Fatal("Server failed to start: ", err)
 	}
 }
