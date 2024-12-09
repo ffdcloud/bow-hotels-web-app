@@ -1,1 +1,1 @@
-web: ./.platform/hooks/build/build.sh
+web: ./bin/build

@@ -14,10 +14,6 @@ chmod +x $BUILD_OUTPUT
 # Stop the existing application (if running)
 pkill $BUILD_FILENAME || true
 
-# Start the new application
-echo "Starting the application..."
-nohup $BUILD_OUTPUT > $APP_DIR/app.log 2>&1 &
-
 echo "Deployment complete!"
 
 
