@@ -1,6 +1,6 @@
 #!/bin/bash
 
-APP_DIR="/var/app/current"
+APP_DIR="./"
 BUILD_FILENAME="build"
 BUILD_OUTPUT="$APP_DIR/bin/$BUILD_FILENAME"
 
