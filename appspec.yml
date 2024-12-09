@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: ./
-    destination: /var/www/bow-hotels/
+    destination: /var/app/current
 hooks:
   BeforeInstall:
     - location: scripts/install_dependencies
