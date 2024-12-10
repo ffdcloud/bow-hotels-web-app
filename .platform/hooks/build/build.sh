@@ -15,7 +15,3 @@ chmod +x $BUILD_OUTPUT
 pkill $BUILD_FILENAME || true
 
 echo "Deployment complete!"
-
-
-
-
