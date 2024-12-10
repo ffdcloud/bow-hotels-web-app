@@ -1,1 +1,1 @@
-web: ./bin/build
+web: ./bin/build -port=8080
